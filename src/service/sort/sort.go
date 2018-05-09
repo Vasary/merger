@@ -1,7 +1,7 @@
 package sort
 
 import (
-	"merger/entity"
+	"merger/src/entity"
 	"github.com/bradfitz/slice"
 )
 

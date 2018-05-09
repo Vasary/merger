@@ -1,6 +1,6 @@
 package handler
 
-import "merger/logger"
+import "merger/src/logger"
 
 func FailOnError(err error, message string) {
 	if err != nil {

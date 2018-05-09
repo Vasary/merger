@@ -1,12 +1,12 @@
 package main
 
 import (
-	"merger/logger"
-	"merger/service/database"
-	"merger/service/user/provider"
-	"merger/processor/prepare"
-	"merger/processor/score"
-	"merger/processor/rematcher"
+	"merger/src/logger"
+	"merger/src/service/database"
+	"merger/src/service/user/provider"
+	"merger/src/processor/prepare"
+	"merger/src/processor/score"
+	"merger/src/processor/rematcher"
 	"fmt"
 )
 

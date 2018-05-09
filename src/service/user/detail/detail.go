@@ -1,10 +1,10 @@
 package detail
 
 import (
-	"merger/entity"
-	"merger/logger"
-	"merger/handler"
-	"merger/service/database"
+	"merger/src/entity"
+	"merger/src/logger"
+	"merger/src/handler"
+	"merger/src/service/database"
 	"encoding/json"
 	"fmt"
 	"time"

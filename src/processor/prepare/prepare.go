@@ -1,9 +1,9 @@
 package prepare
 
 import (
-	"merger/entity"
-	"merger/service/user/detail"
-	"merger/logger"
+	"merger/src/entity"
+	"merger/src/service/user/detail"
+	"merger/src/logger"
 )
 
 func Prepare(list entity.UserList) []entity.User {

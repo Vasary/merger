@@ -1,13 +1,13 @@
 package score
 
 import (
-	"merger/entity"
-	"merger/logger"
-	"merger/service/validator/birthday"
-	"merger/service/validator/name"
-	"merger/service/validator/surname"
-	"merger/service/validator/patronymic"
-	"merger/service/sort"
+	"merger/src/entity"
+	"merger/src/logger"
+	"merger/src/service/validator/birthday"
+	"merger/src/service/validator/name"
+	"merger/src/service/validator/surname"
+	"merger/src/service/validator/patronymic"
+	"merger/src/service/sort"
 )
 
 func Score(users []entity.User) []entity.User {

@@ -2,7 +2,7 @@ package sort
 
 import (
 	"testing"
-	"merger/entity"
+	"merger/src/entity"
 )
 
 var dataProvider = []struct{
