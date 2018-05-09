@@ -4,7 +4,21 @@ go:
 
 go_import_path: github.com/vasary/user_merger
 
-install: true
+install:
+  - go get -u github.com/golang/dep
+  - dep ensure
+  - go get github.com/mattn/goveralls
+  - go get github.com/haya14busa/goverage
+  - go get github.com/golang/lint/golint
 
 before_script:
-  - dep ensure
+  - echo $TRAVIS
+  - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_PULL_REQUEST_SHA
+  - echo $TRAVIS_REPO_SLUG
+  - echo $TRAVIS_SECURE_ENV_VARS
+
+script:
+  - go test -v ./...
