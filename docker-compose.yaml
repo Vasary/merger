@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  app:
+    container_name: data-rematcher
+    image: golang:1.10-alpine
+    env_file:
+      - .env
+    volumes:
+      - .:/go/src/usersRematcher
+    working_dir: /go/src/usersRematcher
+    command: go run main.go
