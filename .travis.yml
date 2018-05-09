@@ -15,8 +15,4 @@ before_install:
   - echo $TRAVIS_SECURE_ENV_VARS
 
 install:
-  - "go get -v github.com/golang/dep"
-  - "dep ensure"
-
-script:
-  - "go test -v ./..."
+  - go get -t ./...
