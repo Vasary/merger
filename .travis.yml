@@ -9,10 +9,6 @@ branches:
   only:
     - master
 
-cache:
-  directories:
-    - $GOPATH/pkg/dep
-
 env:
   - DEP_VERSION="0.4.1"
 
