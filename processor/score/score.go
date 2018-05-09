@@ -24,19 +24,19 @@ func score(user entity.User) int64 {
 	var points int64
 
 	if birthday.Validate(user.GetMask().Birthday) {
-		points += 1
+		points += 12
 	}
 
 	if name.Validate(user.GetMask().Name) {
-		points += 1
+		points += 10
 	}
 
 	if surname.Validate(user.GetMask().Surname) {
-		points += 1
+		points += 11
 	}
 
 	if patronymic.Validate(user.GetMask().Patronymic) {
-		points += 1
+		points += 8
 	}
 
 	return points

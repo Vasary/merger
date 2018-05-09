@@ -24,6 +24,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/joyt/godate"
+  packages = ["."]
+  revision = "7151572574a7c217932a48e0b23c111631e7181c"
+
+[[projects]]
+  branch = "master"
   name = "github.com/lib/pq"
   packages = [
     ".",
@@ -41,6 +47,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "cc8b75f1458dc53468146fcfa4fbe1b448ee4c77436115d5f1e5bb0b95a3669b"
+  inputs-digest = "1369174dfd8eb3395a897ae39bf719631caff0c45a07ef2a22becdb5cab24e65"
   solver-name = "gps-cdcl"
   solver-version = 1
