@@ -6,6 +6,7 @@ install: true
 
 before_script:
   - go get -u github.com/golang/dep
+  - dep ensure
 
 script:
   - go test -v ./...
