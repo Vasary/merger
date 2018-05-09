@@ -1,4 +1,4 @@
-go_import_path: github.com/vasary/merger
+go_import_path: merger
 
 language: go
 
