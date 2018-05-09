@@ -1,13 +1,13 @@
 package score
 
 import (
-	"usersRematcher/entity"
-	"usersRematcher/logger"
-	"usersRematcher/service/validator/birthday"
-	"usersRematcher/service/validator/name"
-	"usersRematcher/service/validator/surname"
-	"usersRematcher/service/validator/patronymic"
-	"usersRematcher/service/sort"
+	"merger/entity"
+	"merger/logger"
+	"merger/service/validator/birthday"
+	"merger/service/validator/name"
+	"merger/service/validator/surname"
+	"merger/service/validator/patronymic"
+	"merger/service/sort"
 )
 
 func Score(users []entity.User) []entity.User {

@@ -1,7 +1,7 @@
 package sort
 
 import (
-	"usersRematcher/entity"
+	"merger/entity"
 	"github.com/bradfitz/slice"
 )
 

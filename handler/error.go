@@ -1,6 +1,6 @@
 package handler
 
-import "usersRematcher/logger"
+import "merger/logger"
 
 func FailOnError(err error, message string) {
 	if err != nil {

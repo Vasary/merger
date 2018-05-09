@@ -1,10 +1,10 @@
 package detail
 
 import (
-	"usersRematcher/entity"
-	"usersRematcher/logger"
-	"usersRematcher/handler"
-	"usersRematcher/service/database"
+	"merger/entity"
+	"merger/logger"
+	"merger/handler"
+	"merger/service/database"
 	"encoding/json"
 	"fmt"
 	"time"
