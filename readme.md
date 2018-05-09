@@ -1,7 +1,7 @@
 # User merger
 ![GoLang](/doc/img/logo.png)
 
-[![Build Status](https://travis-ci.org/Vasary/user_merger.svg?branch=master)](https://travis-ci.org/Vasary/user_merger)
+[![Build Status](https://travis-ci.org/Vasary/merger.svg?branch=master)](https://travis-ci.org/Vasary/merger)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8744e09d7127e1a6ac45/maintainability)](https://codeclimate.com/github/Vasary/merger/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8744e09d7127e1a6ac45/test_coverage)](https://codeclimate.com/github/Vasary/merger/test_coverage)
 
