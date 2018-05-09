@@ -1,12 +1,11 @@
 language: go
 go:
-  - 1.10
-  - master
+  - "1.10"
 
 install: true
 
 before_script:
-  - go get -u github.com/golang/dep/cmd/dep
+  - go get -u github.com/golang/dep
 
 script:
   - go test -v ./...
