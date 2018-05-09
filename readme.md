@@ -1,5 +1,5 @@
 # User merger
-![alt text](/doc/img/logo.png)
+![alt text](/doc/img/logo.png | width=100)
 
 The little helper for UserData project which merges duplicates into one entity
 
