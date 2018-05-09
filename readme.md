@@ -1,5 +1,5 @@
 # User merger
-![alt text](/doc/img/logo.png | width=100)
+![GoLang](/doc/img/logo.png){width="100px"}
 
 The little helper for UserData project which merges duplicates into one entity
 
