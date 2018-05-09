@@ -15,10 +15,6 @@ env:
   global:
     - CC_TEST_REPORTER_ID=8f7ca8ef308445072f1007970d875c83da9776fd955c5ab78d35e9261ad5c7a1
 
-env:
-  global:
-    - CC_TEST_REPORTER_ID=token
-
 before_install:
   - curl -L -s https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 -o $GOPATH/bin/dep
   - chmod +x $GOPATH/bin/dep
