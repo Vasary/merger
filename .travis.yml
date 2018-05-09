@@ -5,11 +5,7 @@ go:
 go_import_path: github.com/vasary/user_merger
 
 install:
-  - go get -u github.com/golang/dep
-  - dep ensure
-  - go get github.com/mattn/goveralls
-  - go get github.com/haya14busa/goverage
-  - go get github.com/golang/lint/golint
+  - go get ./...
 
 before_script:
   - echo $TRAVIS
