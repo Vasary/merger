@@ -2,8 +2,10 @@ language: go
 go:
   - "1.10"
 
+os:
+  - linux
+
 before_install:
-  - echo "Test message"
   - echo $TRAVIS
   - echo $TRAVIS_PULL_REQUEST
   - echo $TRAVIS_PULL_REQUEST_BRANCH
@@ -11,13 +13,10 @@ before_install:
   - echo $TRAVIS_PULL_REQUEST_SHA
   - echo $TRAVIS_REPO_SLUG
   - echo $TRAVIS_SECURE_ENV_VARS
-  - go -v
-  - pwd
 
 install:
-  - pwd
-  - go -v
-  - go get -v ./...
+  - "go get -v github.com/golang/dep"
+  - "dep ensure"
 
 script:
-  - go test -v ./...
+  - "go test -v ./..."
