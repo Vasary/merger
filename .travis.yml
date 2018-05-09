@@ -13,7 +13,10 @@ branches:
 
 env:
   - DEP_VERSION="0.4.1"
-
+  - GOROOT=/usr/local/go
+  - GOPATH=$HOME/go
+  - PATH=$PATH:$GOROOT/bin
+  
 script:
   go test -v ./...
 
