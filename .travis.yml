@@ -1,9 +1,18 @@
 language: go
+
 go:
   - "1.10"
 
-os:
-  - linux
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - $GOPATH/pkg/dep
+
+env:
+  - DEP_VERSION="0.4.1"
 
 before_install:
   - echo $TRAVIS
@@ -14,9 +23,25 @@ before_install:
   - echo $TRAVIS_REPO_SLUG
   - echo $TRAVIS_SECURE_ENV_VARS
 
-before_script:
-  - go get -u -v github.com/golang/dep/cmd/dep   
-  - dep ensure -v
+  - GO_FILES=$(find . -iname '*.go' | grep -v /vendor/)
+  - PKGS=$(go list ./... | grep -v /vendor/)
+
+  - curl -L -s https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-linux-amd64 -o $GOPATH/bin/dep
+  - chmod +x $GOPATH/bin/dep
+
+  - go get -u -v github.com/golang/lint/golint
+  - go get -u -v honnef.co/go/tools/cmd/megacheck
+  - go get -u -v github.com/kisielk/errcheck
+  - go get -u github.com/mattn/goveralls
+
+install:
+  - dep ensure
 
 script:
-  - go test -v ./...
+  - test -z $(gofmt -s -l $GO_FILES)
+  - go vet $PKGS
+  - megacheck $PKGS
+  - errcheck $PKGS
+  - golint -set_exit_status $PKGS
+  - go test -v -covermode=count -coverprofile=profile.cov $PKGS
+  - goveralls -coverprofile=profile.cov -service=travis-ci
