@@ -11,6 +11,7 @@ branches:
 
 env:
   - DEP_VERSION="0.4.1"
+  - "PATH=/home/travis/gopath/bin:$PATH"
 
 before_install:
   - export GOROOT=$(go env GOROOT)
