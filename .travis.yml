@@ -21,8 +21,7 @@ branches:
     - master
 
 before_install:
-  - sudo mkdir -p /var/app
-  - sudo touch /var/app/logs.log
+  - mkdir -p "$(dirname "$LOG_PATH")" && touch "$LOG_PATH"
   - curl -L -s https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 -o $GOPATH/bin/dep
   - chmod +x $GOPATH/bin/dep
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
