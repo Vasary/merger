@@ -1,14 +1,14 @@
 package main
 
 import (
-	"merger/src/logger"
-	"merger/src/service/database"
-	"merger/src/service/user/provider"
-	"merger/src/processor/prepare"
-	"merger/src/processor/score"
-	"merger/src/processor/rematcher"
-	"merger/src/service/sort"
 	"fmt"
+	"merger/src/logger"
+	"merger/src/processor/prepare"
+	"merger/src/processor/rematcher"
+	"merger/src/processor/score"
+	"merger/src/service/database"
+	"merger/src/service/sort"
+	"merger/src/service/user/provider"
 )
 
 func main() {

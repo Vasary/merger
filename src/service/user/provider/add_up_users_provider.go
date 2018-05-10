@@ -1,11 +1,11 @@
 package provider
 
 import (
-	"merger/src/entity"
-	"merger/src/logger"
-	"merger/src/handler"
-	"github.com/lib/pq"
 	"github.com/jinzhu/gorm"
+	"github.com/lib/pq"
+	"merger/src/entity"
+	"merger/src/handler"
+	"merger/src/logger"
 )
 
 func GetUsers(db *gorm.DB) []entity.UserList {

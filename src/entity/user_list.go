@@ -2,10 +2,10 @@ package entity
 
 type UserList struct {
 	Value string
-	List []int64
+	List  []int64
 }
 
-func (u UserList) GetValue() string  {
+func (u UserList) GetValue() string {
 	return u.Value
 }
 

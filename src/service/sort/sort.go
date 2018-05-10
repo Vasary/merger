@@ -1,8 +1,8 @@
 package sort
 
 import (
-	"merger/src/entity"
 	"github.com/bradfitz/slice"
+	"merger/src/entity"
 )
 
 func Sort(users []entity.User) []entity.User {

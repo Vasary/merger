@@ -1,7 +1,7 @@
 package patronymic
 
 import (
-"testing"
+	"testing"
 )
 
 var dataProvider = []struct {

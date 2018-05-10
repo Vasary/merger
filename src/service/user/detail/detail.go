@@ -1,12 +1,12 @@
 package detail
 
 import (
-	"merger/src/entity"
-	"merger/src/logger"
 	"encoding/json"
-	"time"
 	"fmt"
 	"github.com/jinzhu/gorm"
+	"merger/src/entity"
+	"merger/src/logger"
+	"time"
 )
 
 func GetUserDetail(id int64, db *gorm.DB) entity.User {

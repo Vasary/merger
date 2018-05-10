@@ -1,11 +1,11 @@
 package sort
 
 import (
-	"testing"
 	"merger/src/entity"
+	"testing"
 )
 
-var dataProvider = []struct{
+var dataProvider = []struct {
 	points int64
 }{
 	{-1},

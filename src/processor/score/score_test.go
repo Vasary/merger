@@ -1,52 +1,52 @@
 package score
 
 import (
-	"testing"
-	"merger/src/entity"
 	"fmt"
+	"merger/src/entity"
+	"testing"
 )
 
 var dataProvider = []struct {
-	name string
-	surname string
+	name       string
+	surname    string
 	patronymic string
-	birthday string
-	points int64
+	birthday   string
+	points     int64
 }{
 	{
-		name: "Ivan",
-		surname: "Ivanov",
+		name:       "Ivan",
+		surname:    "Ivanov",
 		patronymic: "Ivanovich",
-		birthday: "15-12-1992",
-		points: 41,
+		birthday:   "15-12-1992",
+		points:     41,
 	},
 	{
-		name: "Ivan",
-		surname: "",
+		name:       "Ivan",
+		surname:    "",
 		patronymic: "",
-		birthday: "",
-		points: 10,
+		birthday:   "",
+		points:     10,
 	},
 	{
-		name: "",
-		surname: "Ivanov",
+		name:       "",
+		surname:    "Ivanov",
 		patronymic: "",
-		birthday: "",
-		points: 11,
+		birthday:   "",
+		points:     11,
 	},
 	{
-		name: "",
-		surname: "",
+		name:       "",
+		surname:    "",
 		patronymic: "Ivanovich",
-		birthday: "",
-		points: 8,
+		birthday:   "",
+		points:     8,
 	},
 	{
-		name: "",
-		surname: "",
+		name:       "",
+		surname:    "",
 		patronymic: "",
-		birthday: "15-12-1992",
-		points: 12,
+		birthday:   "15-12-1992",
+		points:     12,
 	},
 }
 
@@ -56,17 +56,17 @@ func TestScore(t *testing.T) {
 
 	for _, element := range dataProvider {
 		var mask = entity.UserMask{
-			Name: element.name,
-			Surname: element.surname,
+			Name:       element.name,
+			Surname:    element.surname,
 			Patronymic: element.patronymic,
-			Birthday: element.birthday,
+			Birthday:   element.birthday,
 		}
 
 		var usr = entity.User{
 			Mask: mask,
 		}
 
-		users = append(users,usr)
+		users = append(users, usr)
 	}
 
 	t.Run("Scoring test", func(t *testing.T) {

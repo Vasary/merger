@@ -5,8 +5,8 @@ import (
 	"merger/src/logger"
 	"merger/src/service/validator/birthday"
 	"merger/src/service/validator/name"
-	"merger/src/service/validator/surname"
 	"merger/src/service/validator/patronymic"
+	"merger/src/service/validator/surname"
 )
 
 func Score(users []entity.User) []entity.User {

@@ -1,10 +1,10 @@
 package prepare
 
 import (
-	"merger/src/entity"
-	"merger/src/service/user/detail"
-	"merger/src/logger"
 	"github.com/jinzhu/gorm"
+	"merger/src/entity"
+	"merger/src/logger"
+	"merger/src/service/user/detail"
 )
 
 func Prepare(list entity.UserList, db *gorm.DB) []entity.User {

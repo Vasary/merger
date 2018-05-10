@@ -1,12 +1,12 @@
 package birthday
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 )
 
-var examples = []struct{
-	cases []string
+var examples = []struct {
+	cases  []string
 	result bool
 }{
 	{
@@ -78,7 +78,6 @@ var examples = []struct{
 		},
 	},
 }
-
 
 func TestBirthdayValidator(t *testing.T) {
 	t.Run("Validate birthday", func(t *testing.T) {

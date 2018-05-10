@@ -1,10 +1,10 @@
 package provider
 
 import (
+	"fmt"
 	mocket "github.com/Selvatico/go-mocket"
 	"github.com/jinzhu/gorm"
 	"testing"
-	"fmt"
 )
 
 var DB *gorm.DB
@@ -14,7 +14,7 @@ var commonReply = []map[string]interface{}{
 	{"value": "two", "array_agg": "{4,5,6}"},
 }
 
-func TestGetUsers(t *testing.T)  {
+func TestGetUsers(t *testing.T) {
 	setupMock()
 
 	GlobalMock := mocket.Catcher

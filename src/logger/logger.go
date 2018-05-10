@@ -1,15 +1,15 @@
 package logger
 
 import (
+	"io"
 	"log"
 	"os"
-	"io"
 )
 
 var (
 	info    *log.Logger
 	warning *log.Logger
-	erro   *log.Logger
+	erro    *log.Logger
 )
 
 func init() {
@@ -23,7 +23,6 @@ func init() {
 		warning = log.New(io.MultiWriter(os.Stdout, logFile), "WARNING: ", log.Ldate|log.Ltime)
 		erro = log.New(io.MultiWriter(os.Stdout, logFile), "ERROR: ", log.Ldate|log.Ltime)
 	}
-
 }
 
 func Info(v ...interface{}) {
