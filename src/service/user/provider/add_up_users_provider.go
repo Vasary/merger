@@ -11,7 +11,7 @@ import (
 func GetUsers(db *gorm.DB) []entity.UserList {
 	logger.Info("Looking for users for add up")
 
-	rows, err := db.Raw("select up.value, array_agg(user_id) from user_parameters up join parameter p on up.parameter_id = p.id and p.id = 5 group by up.value, source_id having count(up.id) > 1").Rows()
+	rows, err := db.Raw("select up.value, array_agg(user_id) from user_parameters up join parameter p on up.parameter_id = p.id and p.id = ? group by up.value, source_id having count(up.id) > 1", 5).Rows()
 
 	handler.FailOnError(err, "Error in query")
 

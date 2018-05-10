@@ -9,3 +9,7 @@
 [[constraint]]
   branch = "master"
   name = "github.com/bradfitz/slice"
+
+[[constraint]]
+  name = "github.com/Selvatico/go-mocket"
+  version = "1.0.4"

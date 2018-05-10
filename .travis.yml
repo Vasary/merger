@@ -4,7 +4,6 @@ language: go
 
 go:
   - "1.10"
-  - master
 
 dist: trusty
 
@@ -33,7 +32,7 @@ install:
   - dep ensure
 
 script:
-  go test -coverprofile c.out ./...
+  go test -v -coverprofile c.out ./...
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

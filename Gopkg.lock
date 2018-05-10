@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/Selvatico/go-mocket"
+  packages = ["."]
+  revision = "82e79c17561f0da018597afa0f51c993ee8d01d0"
+  version = "v1.0.4"
+
+[[projects]]
   branch = "master"
   name = "github.com/bradfitz/slice"
   packages = ["."]
@@ -47,6 +53,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1369174dfd8eb3395a897ae39bf719631caff0c45a07ef2a22becdb5cab24e65"
+  inputs-digest = "faff9671ec99b17e87aa0cbbad3ff323eb3481d9aec2c2eecc4c92b91b1f0251"
   solver-name = "gps-cdcl"
   solver-version = 1
