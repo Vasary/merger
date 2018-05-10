@@ -44,6 +44,10 @@ var dataProvider = []struct {
 		value:  "\r",
 		result: false,
 	},
+	{
+		value:  "",
+		result: false,
+	},
 }
 
 func TestSurnameValidator(t *testing.T) {

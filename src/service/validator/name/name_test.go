@@ -52,6 +52,10 @@ var dataProvider = []struct {
 		value:  " whitespace before",
 		result: false,
 	},
+	{
+		value:  "",
+		result: false,
+	},
 }
 
 func TestNameValidator(t *testing.T) {

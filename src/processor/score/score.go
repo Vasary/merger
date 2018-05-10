@@ -7,7 +7,6 @@ import (
 	"merger/src/service/validator/name"
 	"merger/src/service/validator/surname"
 	"merger/src/service/validator/patronymic"
-	"merger/src/service/sort"
 )
 
 func Score(users []entity.User) []entity.User {
@@ -17,7 +16,7 @@ func Score(users []entity.User) []entity.User {
 		users[index].IncreasePoints(score(user))
 	}
 
-	return sort.Sort(users)
+	return users
 }
 
 func score(user entity.User) int64 {
