@@ -9,3 +9,8 @@ func FailOnError(err error, message string) {
 		panic(err)
 	}
 }
+
+func Fail(message string) {
+	logger.Error(message)
+	panic(message)
+}

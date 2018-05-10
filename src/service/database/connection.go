@@ -6,11 +6,25 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"merger/src/handler"
 	"os"
+	"sync"
 )
 
-var connection *gorm.DB
+type singleton struct {
+	db *gorm.DB
+}
 
-func init() {
+var instance *singleton
+var once sync.Once
+
+func GetConnection() *gorm.DB {
+	once.Do(func() {
+		instance = &singleton{db: connect()}
+	})
+
+	return instance.db
+}
+
+func connect() *gorm.DB {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		os.Getenv("DATABASE_HOST"),
@@ -22,11 +36,10 @@ func init() {
 
 	db, err := gorm.Open("postgres", dsn)
 
-	connection = db
+	db.DB().SetMaxIdleConns(0)
+	db.LogMode(false)
 
 	handler.FailOnError(err, "Can't connect to database")
-}
 
-func GetConnection() *gorm.DB {
-	return connection
+	return db
 }

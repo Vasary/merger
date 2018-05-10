@@ -62,9 +62,8 @@ func TestScore(t *testing.T) {
 			Birthday:   element.birthday,
 		}
 
-		var usr = entity.User{
-			Mask: mask,
-		}
+		var usr = entity.User{}
+		usr.SetMask(mask)
 
 		users = append(users, usr)
 	}

@@ -8,7 +8,7 @@ import (
 )
 
 func Prepare(list entity.UserList, db *gorm.DB) []entity.User {
-	logger.Info("Preparing row data")
+	logger.Debug("Preparing row data")
 
 	var users []entity.User
 

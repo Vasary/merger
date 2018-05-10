@@ -5,26 +5,40 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	"merger/src/entity"
+	"merger/src/handler"
 	"merger/src/logger"
-	"time"
 )
 
 func GetUserDetail(id int64, db *gorm.DB) entity.User {
-	row := db.Raw("SELECT COALESCE(identity_mask, '{}'::json) as identity_mask, id, created_at, updated_at FROM users WHERE id = ?", id).Row()
+	row := db.Raw(`
+		SELECT
+			COALESCE(u.identity_mask, '{}' :: json) as identity_mask,
+  			u.id,
+  			s.trust_level
+		
+		FROM users u
+  			JOIN user_parameters up ON up.user_id = u.id AND up.parameter_id = 5
+  			JOIN source s ON s.id = up.source_id
+
+		WHERE u.id = ?
+	`, id)
 
 	var mask string
 	var userId int64
-	var createdAt time.Time
-	var updatedAt time.Time
+	var trustLevel int64
 
-	row.Scan(&mask, &userId, &createdAt, &updatedAt)
+	row.Row().Scan(&mask, &userId, &trustLevel)
+
+	if userId == 0 {
+		handler.Fail(fmt.Sprintf("Requested user id %v, obtained %v", id, userId))
+	}
 
 	var dat map[string]string
 
 	if err := json.Unmarshal([]byte(mask), &dat); err != nil {
-		logger.Warning(fmt.Sprintf("%d users mask not found", id))
+		logger.Debug(fmt.Sprintf("%d users mask not found", id))
 	} else {
-		logger.Info(fmt.Sprintf("Mask for user %d is %v", id, mask))
+		logger.Debug(fmt.Sprintf("Mask for user %d is %v", id, mask))
 	}
 
 	var maskEntity entity.UserMask
@@ -35,10 +49,9 @@ func GetUserDetail(id int64, db *gorm.DB) entity.User {
 	maskEntity.Patronymic = getValue(dat, "patronymic")
 	maskEntity.Birthday = getValue(dat, "birthday")
 
-	user.Id = userId
-	user.CreatedAt = createdAt
-	user.UpdatedAt = updatedAt
-	user.Mask = maskEntity
+	user.SetId(userId)
+	user.SetMask(maskEntity)
+	user.SetTrustLevel(trustLevel)
 
 	return user
 }

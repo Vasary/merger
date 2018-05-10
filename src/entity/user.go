@@ -1,29 +1,26 @@
 package entity
 
-import "time"
-
 type User struct {
-	Id        int64
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	Mask      UserMask
-	points    int64
+	id         int64
+	mask       UserMask
+	points     int64
+	trustLevel int64
 }
 
 func (u *User) GetId() int64 {
-	return u.Id
+	return u.id
 }
 
-func (u *User) GetCreatedAt() time.Time {
-	return u.CreatedAt
-}
-
-func (u *User) GetUpdatedAt() time.Time {
-	return u.UpdatedAt
+func (u *User) SetId(id int64) {
+	u.id = id
 }
 
 func (u *User) GetMask() UserMask {
-	return u.Mask
+	return u.mask
+}
+
+func (u *User) SetMask(mask UserMask) {
+	u.mask = mask
 }
 
 func (u *User) IncreasePoints(points int64) {
@@ -32,4 +29,12 @@ func (u *User) IncreasePoints(points int64) {
 
 func (u *User) GetPoints() int64 {
 	return u.points
+}
+
+func (u *User) SetTrustLevel(level int64) {
+	u.trustLevel = level
+}
+
+func (u *User) GetTrustLevel() int64 {
+	return u.trustLevel
 }
