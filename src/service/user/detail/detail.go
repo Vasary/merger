@@ -3,14 +3,14 @@ package detail
 import (
 	"merger/src/entity"
 	"merger/src/logger"
-	"merger/src/service/database"
 	"encoding/json"
 	"time"
 	"fmt"
+	"github.com/jinzhu/gorm"
 )
 
-func GetUserDetail(id int64) entity.User {
-	row := database.GetConnection().Raw("SELECT COALESCE(identity_mask, '{}'::json) as identity_mask, id, created_at, updated_at FROM users WHERE id = ?", id).Row()
+func GetUserDetail(id int64, db *gorm.DB) entity.User {
+	row := db.Raw("SELECT COALESCE(identity_mask, '{}'::json) as identity_mask, id, created_at, updated_at FROM users WHERE id = ?", id).Row()
 
 	var mask string
 	var userId int64
