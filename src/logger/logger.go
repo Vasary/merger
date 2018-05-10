@@ -15,9 +15,9 @@ var (
 func init() {
 	logFile, err := os.OpenFile(os.Getenv("LOG_PATH"), os.O_CREATE|os.O_APPEND|os.O_RDWR, 0666)
 	if err == nil {
-		info = log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
-		warning = log.New(os.Stdout, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
-		erro = log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
+		info = log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime)
+		warning = log.New(os.Stdout, "WARNING: ", log.Ldate|log.Ltime)
+		erro = log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime)
 	} else {
 		info = log.New(io.MultiWriter(os.Stdout, logFile), "INFO: ", log.Ldate|log.Ltime)
 		warning = log.New(io.MultiWriter(os.Stdout, logFile), "WARNING: ", log.Ldate|log.Ltime)
