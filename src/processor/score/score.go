@@ -11,7 +11,7 @@ import (
 )
 
 func Score(users []entity.User) []entity.User {
-	logger.Info.Println("Scoring user mask")
+	logger.Info("Scoring user mask")
 
 	for index, user := range users {
 		users[index].IncreasePoints(score(user))

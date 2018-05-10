@@ -7,7 +7,7 @@ import (
 )
 
 func Prepare(list entity.UserList) []entity.User {
-	logger.Info.Println("Prepearing row data")
+	logger.Info("Preparing row data")
 
 	var users []entity.User
 

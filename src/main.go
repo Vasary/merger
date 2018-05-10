@@ -11,10 +11,10 @@ import (
 )
 
 func main() {
-	logger.Info.Println("Starting")
+	logger.Info("Starting")
 
 	users := provider.GetUsers()
-	logger.Info.Println(fmt.Sprintf("Found %d records for addup", len(users)))
+	logger.Info(fmt.Sprintf("Found %d records for addup", len(users)))
 
 	for _, row := range users {
 		rematcher.Rematch(score.Score(prepare.Prepare(row)))

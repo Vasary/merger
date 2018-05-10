@@ -20,7 +20,7 @@ func GetUserDetail(id int64) entity.User {
 
 	row.Scan(&mask, &userId, &createdAt, &updatedAt)
 
-	logger.Info.Println(fmt.Sprintf("Mask for user %d is %v", id, mask))
+	logger.Info(fmt.Sprintf("Mask for user %d is %v", id, mask))
 
 	var dat map[string]string
 
