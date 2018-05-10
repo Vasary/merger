@@ -14,7 +14,7 @@ func main() {
 	logger.Info("Starting")
 
 	users := provider.GetUsers()
-	logger.Info(fmt.Sprintf("Found %d records for addup", len(users)))
+	logger.Info(fmt.Sprintf("Found %d records for add up", len(users)))
 
 	for _, row := range users {
 		rematcher.Rematch(score.Score(prepare.Prepare(row)))

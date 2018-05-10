@@ -11,19 +11,15 @@ import (
 func Rematch(users []entity.User) {
 	logger.Info("Rematching")
 
-	logger.Info(fmt.Sprintf("Main user id %d", users[0].Id))
+	logger.Info(fmt.Sprintf("Master user id is %d", users[0].Id))
 
 	for i := 1; i < len(users); i++ {
-		logger.Info( fmt.Sprintf("Mergin %d with %d", users[i].Id, users[0].Id))
+		logger.Info( fmt.Sprintf("Merging %d with %d", users[i].Id, users[0].Id))
 
-		_, err := database.GetConnection().Raw(`SELECT rematch_import(?, ?)`, users[0].Id, users[i].Id).Rows()
-
-		deleteUser(users[i].Id)
+		_, err := database.GetConnection().Raw(`SELECT merge_users(?, ?)`, users[0].Id, users[i].Id).Rows()
 
 		handler.FailOnError(err, "Rematching error")
 	}
-}
 
-func deleteUser(userId int64) {
-
+	logger.Info("Row merged")
 }

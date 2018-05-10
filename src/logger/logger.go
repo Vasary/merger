@@ -2,26 +2,25 @@ package logger
 
 import (
 	"log"
-	"io/ioutil"
 	"os"
+	"io"
 )
 
 var (
-	trace          *log.Logger
 	info           *log.Logger
 	warning        *log.Logger
 	error          *log.Logger
 )
 
 func init() {
-	trace = log.New(ioutil.Discard, "TRACE: ", log.Ldate|log.Ltime|log.Lshortfile)
-	info = log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
-	warning = log.New(os.Stdout, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
-	error = log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
-}
+	logFile, err := os.OpenFile(os.Getenv("LOG_PATH"), os.O_CREATE | os.O_APPEND | os.O_RDWR, 0666)
+	if err != nil {
+		panic(err)
+	}
 
-func Trance(v ...interface{})  {
-	trace.Println(v)
+	info = log.New(io.MultiWriter(os.Stdout, logFile), "INFO: ", log.Ldate|log.Ltime)
+	warning = log.New(io.MultiWriter(os.Stdout, logFile), "WARNING: ", log.Ldate|log.Ltime)
+	error = log.New(io.MultiWriter(os.Stdout, logFile), "ERROR: ", log.Ldate|log.Ltime)
 }
 
 func Info(v ...interface{})  {

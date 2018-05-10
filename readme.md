@@ -13,10 +13,11 @@
 #### Environment parameters
 
 - DATABASE_USER=
-- DATABASE_PASSWORD=
+- DATABASE_PASSWORD=5432
 - DATABASE_NAME=
 - DATABASE_HOST=
 - DATABASE_PORT=
+- LOG_PATH=
 
 #### Run tests
 ```
@@ -36,5 +37,5 @@
 
 #### View logs
 ```
-# tail -fn 100 /app/logs/logs.log
+# tail -fn 100 $LOG_PATH
 ```

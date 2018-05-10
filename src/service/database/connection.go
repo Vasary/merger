@@ -5,20 +5,20 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"merger/src/handler"
-)
-
-const (
-	host     = "data.cfv4.com"
-	port     = 5434
-	user     = "testdata"
-	password = "zTLsv2QeatnA45Ks2sJ7PGg5"
-	dbname   = "userdata"
+	"os"
 )
 
 var connection *gorm.DB
 
 func init() {
-	dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+	dsn := fmt.Sprintf(
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		os.Getenv("DATABASE_HOST"),
+		os.Getenv("DATABASE_PORT"),
+		os.Getenv("DATABASE_USER"),
+		os.Getenv("DATABASE_PASSWORD"),
+		os.Getenv("DATABASE_NAME"),
+	)
 
 	db, err := gorm.Open("postgres", dsn)
 
