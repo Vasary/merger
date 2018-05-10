@@ -8,12 +8,6 @@
   version = "v1.0.4"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/bradfitz/slice"
-  packages = ["."]
-  revision = "d9036e2120b5ddfa53f3ebccd618c4af275f47da"
-
-[[projects]]
   name = "github.com/jinzhu/gorm"
   packages = [
     ".",
@@ -45,14 +39,26 @@
   revision = "d34b9ff171c21ad295489235aec8b6626023cd04"
 
 [[projects]]
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  revision = "9e777a8366cce605130a531d2cd6363d07ad7317"
+  version = "v0.0.2"
+
+[[projects]]
   branch = "master"
-  name = "go4.org"
-  packages = ["reflectutil"]
-  revision = "9599cf28b011184741f249bd9f9330756b506cbc"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  revision = "7dfd1290c7917b7ba22824b9d24954ab3002fe24"
+
+[[projects]]
+  name = "gopkg.in/cheggaaa/pb.v1"
+  packages = ["."]
+  revision = "1f7f140e48255d0e448ec06de47d4545b8ec1f85"
+  version = "v1.0.24"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "faff9671ec99b17e87aa0cbbad3ff323eb3481d9aec2c2eecc4c92b91b1f0251"
+  inputs-digest = "c25461f9779c14b7781ebd73315a07380c0146d2e567057f2fc09c4a701ceaa5"
   solver-name = "gps-cdcl"
   solver-version = 1
