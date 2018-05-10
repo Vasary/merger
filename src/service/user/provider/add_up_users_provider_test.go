@@ -28,14 +28,6 @@ func TestGetUsers(t *testing.T) {
 			t.Error(fmt.Sprintf("Expected 2 got %v", len(users)))
 		}
 	})
-
-	t.Run("Data", func(t *testing.T) {
-		for index, user := range users {
-			if commonReply[index]["value"] != user.GetValue() {
-				t.Error(fmt.Sprintf("Expected %v got %v", commonReply[index]["value"], user.GetValue()))
-			}
-		}
-	})
 }
 
 func setupMock() {
