@@ -1,3 +1,4 @@
+
 # Persons merger
 [![Build Status](https://travis-ci.org/Vasary/merger.svg?branch=master)](https://travis-ci.org/Vasary/merger)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8744e09d7127e1a6ac45/maintainability)](https://codeclimate.com/github/Vasary/merger/maintainability)
@@ -6,12 +7,15 @@
 > The little helper for UserData project which merges duplicates into one entity
 
 #### Prepare
+> * Copy environment file
+> * Insert rematcher procedure
 ```
 # cp .env.dist .env
+# psql -U postgres -d userdata -a -f ./sql/procedure.sql
 ```
 
 #### Environment parameters
-
+  > All variables are required
 - DATABASE_USER=
 - DATABASE_PASSWORD=5432
 - DATABASE_NAME=
@@ -27,7 +31,7 @@
 #### Build application
 ```
 # cd src
-# go build -o ../dist/app
+# go build -o ../dist/app ./src
 ```
 
 #### Run application
