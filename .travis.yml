@@ -8,12 +8,13 @@ go:
 dist: trusty
 
 env:
-  - DATABASE_HOST=localhost
-  - DATABASE_NAME=userdata
-  - DATABASE_PASSWORD=postgres
-  - DATABASE_PORT=5432
-  - DATABASE_USER=postgres
-  - LOG_PATH=/var/app/logs.log
+  global:
+    - DATABASE_HOST=localhost
+    - DATABASE_NAME=userdata
+    - DATABASE_PASSWORD=postgres
+    - DATABASE_PORT=5432
+    - DATABASE_USER=postgres
+    - LOG_PATH=/var/app/logs.log
 
 branches:
   only:
